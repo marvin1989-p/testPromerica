@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Producto</title>
+    </h:head>
+    <h:body>
+        <br />
+        <h:link outcome="index" value="INICIO" />
+        <br />
+    <h:form>
+        <p:dataTable var="pro" value="#{productos}">
+                    <p:column headerText="Id">
+                        <h:outputText value="#{pro.idProducto }" />
+                    </p:column> 
+                    <p:column headerText="Descripcion">
+                        <h:outputText value="#{pro.descripcion }" />
+                    </p:column>a
+                    <p:column headerText="Marca">
+                        <h:outputText value="#{pro.nombre}" />
+                    </p:column>
+                    <p:column headerText="Precio">
+                        <h:outputText value="#{pro.precio}" />
+                    </p:column>
+                    <p:column headerText="Ver">
+                        <h:commandButton  value="Ver" type="button" onclick="PF('dlg1').show();" />                        
+                    </p:column>
+                    <p:column headerText="Editar">
+                        <h:commandButton  value="Editar" type="button" onclick="PF('dlg2').show();" />                        
+                    </p:column>
+                    <p:column headerText="Eliminar">
+                        <h:commandButton  value="Eliminar"  />
+                    </p:column>
+                </p:dataTable>
+        <h:commandButton id="registroCommand" value="Crear" type="button" onclick="PF('dlg3').show();" action="#{Producto.preCrear()}"  />
+    </h:form>        
+
+        <p:dialog header="Crear Product" widgetVar="dlg1" modal="true" height="500" width="500"  >
+            <h:form>
+                <h:panelGrid columns="2" cellpadding="5">
+                   <p:column headerText="Descripcion">
+                            <h:outputText value="#{pro.descripcion }" />
+                        </p:column>a
+                        <p:column headerText="Marca">
+                            <h:outputText value="#{pro.nombre}" />
+                        </p:column>
+                        <p:column headerText="Precio">
+                            <h:outputText value="#{pro.precio}" />
+                        </p:column>
+                </h:panelGrid>
+             </h:form>
+
+            <h:commandButton  value="Editar"  onclick="PF('dlg1').hide() ;" />         
+        </p:dialog>   
+    
+        <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+             <h:panelGrid columns="2" cellpadding="5">
+                <h:outputText value="Marca: " />
+                <h:inputText value="#{registrofacade.id}"  />
+                <h:outputText value="Edicion: " />
+                <h:inputText value="#{registrofacade.marca}"  />
+                <h:outputText value="Edicion" />
+                <h:inputText value="#{registrofacade.precio}"  />
+                <h:outputText value="Edicion" />
+                <h:inputText value="#{registrofacade.stock}"  />
+                <h:outputText value="Edicion" />
+                <h:inputText value="#{registrofacade.descripcion}"  />
+             </h:panelGrid>
+            <h:commandButton  value="Cerrar"  onclick="PF('dlg2').hide() ;" />         
+        </p:dialog>  
+        
+        <p:dialog header="nuevo Producto" widgetVar="dlg3" modal="true" height="500" width="500" >
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+               <h:outputText value="Nombre: " />
+               <h:inputText value="#{Producto.pr.nombre }"  />
+               <h:outputText value="Descripcion " />
+               <h:inputText value="#{Producto.pr.descripcion }"  />
+               <h:outputText value="Precio" />
+               <h:inputText value="#{Producto.pr.precio}"  />            
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellpadding="2">
+                <h:commandButton  value="Crear"  onclick="PF('dlg3').hide() ;" action="#{Producto.crear(Producto.pr)}" />         
+            <h:commandButton  value="Cancelar"  onclick="PF('dlg3').hide() ;" />         
+            </h:panelGrid>
+        </h:form>
+    </p:dialog>   
+
+            </h:body>
+
+</html>

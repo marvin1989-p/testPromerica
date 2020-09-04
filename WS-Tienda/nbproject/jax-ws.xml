@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="ProductoDaoSessionBean">
+      <implementation-class>com.model.dao.ProductoDaoSessionBean</implementation-class>
+    </service>
+    <service name="ClienteDaoSessionBean">
+      <implementation-class>com.model.dao.ClienteDaoSessionBean</implementation-class>
+    </service>
+    <service name="OrdenDaoSessionBean">
+      <implementation-class>com.model.dao.OrdenDaoSessionBean</implementation-class>
+    </service>
+  </services>
+  <clients>
+  </clients>
+</jax-ws>

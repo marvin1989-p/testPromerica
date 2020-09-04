@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ProductoWS/ProductoDaoSessionBean?WSDL" uri="src/conf/xml-resources/web-service-references/ProductoDaoSessionBean/wsdl/localhost_8080/ProductoWS/ProductoDaoSessionBean.wsdl"/>
+    <system systemId="http://localhost:8080/ProductoWS/ProductoDaoSessionBean?xsd=1" uri="src/conf/xml-resources/web-service-references/ProductoDaoSessionBean/wsdl/localhost_8080/ProductoWS/ProductoDaoSessionBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ClienteWS/ClienteDaoSessionBean?WSDL" uri="src/conf/xml-resources/web-service-references/ClienteDaoSessionBean/wsdl/localhost_8080/ClienteWS/ClienteDaoSessionBean.wsdl"/>
+    <system systemId="http://localhost:8080/ClienteWS/ClienteDaoSessionBean?xsd=1" uri="src/conf/xml-resources/web-service-references/ClienteDaoSessionBean/wsdl/localhost_8080/ClienteWS/ClienteDaoSessionBean.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/OrdenWS/OrdenDaoSessionBean?WSDL" uri="src/conf/xml-resources/web-service-references/OrdenDaoSessionBean/wsdl/localhost_8080/OrdenWS/OrdenDaoSessionBean.wsdl"/>
+    <system systemId="http://localhost:8080/OrdenWS/OrdenDaoSessionBean?xsd=1" uri="src/conf/xml-resources/web-service-references/OrdenDaoSessionBean/wsdl/localhost_8080/OrdenWS/OrdenDaoSessionBean.xsd_1.xsd"/>
+</catalog>

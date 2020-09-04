@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-ProductoDaoSessionBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ProductoDaoSessionBean"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ProductoDaoSessionBean" destdir="${build.generated.dir}/jax-wsCache/ProductoDaoSessionBean" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ProductoDaoSessionBean/wsdl/localhost_8080/ProductoWS/ProductoDaoSessionBean.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProductoWS/ProductoDaoSessionBean?WSDL" xnocompile="true" xendorsed="true" package="ws.producto">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ProductoDaoSessionBean/wsdl/localhost_8080/ProductoWS/ProductoDaoSessionBean.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ProductoDaoSessionBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ProductoDaoSessionBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ProductoDaoSessionBean" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws/producto"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ProductoDaoSessionBean"/>
+    </target>
+    <target name="wsimport-client-ClienteDaoSessionBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ClienteDaoSessionBean"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ClienteDaoSessionBean" destdir="${build.generated.dir}/jax-wsCache/ClienteDaoSessionBean" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ClienteDaoSessionBean/wsdl/localhost_8080/ClienteWS/ClienteDaoSessionBean.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ClienteWS/ClienteDaoSessionBean?WSDL" xnocompile="true" xendorsed="true" package="ws.cliente">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ClienteDaoSessionBean/wsdl/localhost_8080/ClienteWS/ClienteDaoSessionBean.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ClienteDaoSessionBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ClienteDaoSessionBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ClienteDaoSessionBean" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws/cliente"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ClienteDaoSessionBean"/>
+    </target>
+    <target name="wsimport-client-OrdenDaoSessionBean" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OrdenDaoSessionBean"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OrdenDaoSessionBean" destdir="${build.generated.dir}/jax-wsCache/OrdenDaoSessionBean" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OrdenDaoSessionBean/wsdl/localhost_8080/OrdenWS/OrdenDaoSessionBean.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/OrdenWS/OrdenDaoSessionBean?WSDL" xnocompile="true" xendorsed="true" package="ws.orden">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OrdenDaoSessionBean/wsdl/localhost_8080/OrdenWS/OrdenDaoSessionBean.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OrdenDaoSessionBean"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OrdenDaoSessionBean">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OrdenDaoSessionBean" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws/orden"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OrdenDaoSessionBean"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ProductoDaoSessionBean, wsimport-client-ClienteDaoSessionBean, wsimport-client-OrdenDaoSessionBean"/>
+</project>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Ordenes</title>
+    </h:head>
+    <h:body>
+        <br />
+        <h:link outcome="index" value="INICIO" />
+        <br />
+    <h:form>
+        <p:dataTable var="ord" value="#{ordenes}">
+                    <p:column headerText="Id">
+                        <h:outputText value="#{ord.idOrden }" />
+                    </p:column> 
+                    <p:column headerText="cliente">
+                        <h:outputText value="#{ord.idCliente }" />
+                    </p:column>a
+                    <p:column headerText="producto">
+                        <h:outputText value="#{ord.idProducto}" />
+                    </p:column>
+                    <p:column headerText="cantidad">
+                        <h:outputText value="#{ord.cantidad}" />
+                    </p:column>
+                        <p:column headerText="fecha">
+                        <h:outputText value="#{ord.fecha}" />
+                        </p:column>
+                    <p:column headerText="Ver">
+                        <h:commandButton  value="Ver" type="button" onclick="PF('dlg1').show();" />                        
+                    </p:column>
+                    <p:column headerText="Editar">
+                        <h:commandButton  value="Editar" type="button" onclick="PF('dlg2').show();" />                        
+                    </p:column>
+                    <p:column headerText="Eliminar">
+                        <h:commandButton  value="Eliminar"  />
+                    </p:column>
+                </p:dataTable>
+           <h:commandButton id="registroCommand" value="Crear" />
+    </h:form>        
+
+    <p:dialog header="Modal Dialog" widgetVar="dlg1" modal="true" height="100">
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+               <h:outputText value="Marca: " />
+               <h:inputText value="#{registrofacade.id}"  />
+               <h:outputText value="Edicion: " />
+               <h:inputText value="#{registrofacade.marca}"  />
+               <h:outputText value="Edicion" />
+               <h:inputText value="#{registrofacade.precio}"  />
+               <h:outputText value="Edicion" />
+               <h:inputText value="#{registrofacade.stock}"  />
+               <h:outputText value="Edicion" />
+               <h:inputText value="#{registrofacade.descripcion}"  />
+            </h:panelGrid>
+         </h:form>
+
+        <h:commandButton  value="Editar"  onclick="PF('dlg1').hide() ;" />         
+    </p:dialog>   
+    
+    <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+         <h:panelGrid columns="2" cellpadding="5">
+            <h:outputText value="Marca: " />
+            <h:inputText value="#{registrofacade.id}"  />
+            <h:outputText value="Edicion: " />
+            <h:inputText value="#{registrofacade.marca}"  />
+            <h:outputText value="Edicion" />
+            <h:inputText value="#{registrofacade.precio}"  />
+            <h:outputText value="Edicion" />
+            <h:inputText value="#{registrofacade.stock}"  />
+            <h:outputText value="Edicion" />
+            <h:inputText value="#{registrofacade.descripcion}"  />
+         </h:panelGrid>
+        <h:commandButton  value="Cerrar"  onclick="PF('dlg2').hide() ;" />         
+    </p:dialog>   
+
+            </h:body>
+
+</html>
